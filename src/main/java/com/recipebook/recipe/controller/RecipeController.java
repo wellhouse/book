@@ -1,12 +1,10 @@
 package com.recipebook.recipe.controller;
 
-import com.recipebook.model.Recipe;
 import com.recipebook.model.enums.OccasionEnum;
 import com.recipebook.model.enums.RecipeTypeEnum;
 import com.recipebook.recipe.dto.RecipeDto;
 import com.recipebook.recipe.dto.RecipeFilterDto;
 import com.recipebook.recipe.service.RecipeService;
-import com.recipebook.systemexceptions.ExceptionHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/book/recipe")
@@ -42,7 +41,21 @@ public class RecipeController {
         return ResponseEntity.ok(saved);
     }
 
-    @GetMapping("/filter")
+    @PutMapping("/{id}")
+    public ResponseEntity<RecipeDto> updateRecipe(@PathVariable(required = true) UUID id, @Valid @RequestBody RecipeDto recipeDto) {
+        recipeDto.setUuid(id);
+        RecipeDto saved = recipeService.update(recipeDto);
+        return ResponseEntity.ok(saved);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<UUID> deleteRecipe(@PathVariable(value = "id") UUID id) {
+        recipeService.delete(id);
+        return ResponseEntity.ok().body(id);
+    }
+
+
+        @GetMapping("/filter")
     public ResponseEntity<List<RecipeDto>> getByFilter(@RequestParam(value = "title", required = false) String title,
                                                         @RequestParam(value = "init-prep-time", required = false) Integer initPrepTime,
                                                         @RequestParam(value = "limit-prep-time", required = false) Integer limitPrepTime,

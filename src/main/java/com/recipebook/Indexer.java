@@ -1,6 +1,6 @@
 package com.recipebook;
 
-import com.recipebook.systemexceptions.IndexException;
+import com.recipebook.exceptions.system.IndexException;
 import org.hibernate.search.mapper.orm.Search;
 import org.hibernate.search.mapper.orm.massindexing.MassIndexer;
 import org.hibernate.search.mapper.orm.session.SearchSession;

@@ -1,5 +1,7 @@
 package com.recipebook.recipe.service;
 
+import com.recipebook.exceptions.business.BusinessException;
+import com.recipebook.exceptions.business.ResourceNotFoundException;
 import com.recipebook.model.Recipe;
 import com.recipebook.model.enums.OccasionEnum;
 import com.recipebook.recipe.controller.RecipeController;
@@ -23,6 +25,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -45,12 +49,32 @@ public class RecipeServiceImpl implements RecipeService {
 
         modelMapper.map(recipeDto, recipe);
 
-        Recipe save = recipeRepository.save(recipe);
+        Recipe saved = recipeRepository.save(recipe);
 
-        modelMapper.map(save, recipeDto);
+        recipeDto.setUuid(saved.getUuid());
 
         return recipeDto;
     }
+
+    public RecipeDto update(RecipeDto recipeDto)throws ResourceNotFoundException, BusinessException {
+
+        Recipe recipe = recipeRepository.findById(recipeDto.getUuid()).orElseThrow(() -> new ResourceNotFoundException("Recipe not found !"));
+
+        modelMapper.map(recipeDto, recipe);
+
+        recipeRepository.save(recipe);
+
+        return recipeDto;
+    }
+
+    public void delete(UUID uuid) throws ResourceNotFoundException, BusinessException {
+
+        Recipe recipe = recipeRepository.findById(uuid).orElseThrow(() -> new ResourceNotFoundException("Internal error trying to delete resource: " + uuid));
+
+        recipeRepository.delete(recipe);
+    }
+
+
 
     public Slice<RecipeDto> getByOccasion(OccasionEnum occasion) {
 

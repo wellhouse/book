@@ -1,4 +1,4 @@
-package com.recipebook.systemexceptions;
+package com.recipebook.exceptions.system;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
