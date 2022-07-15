@@ -12,6 +12,13 @@ INSERT INTO USERS (uuid, name, surname, gender, email, password, created_at) VAL
 --('43a333ff-35dd-4bde-acda-58f43d790258','Garlic', 'Root','Unit',6),
 --('996fe45c-0856-4d1e-beed-fc372db8c7c9','Pork Belly', 'Meat and fish','grams',100);
 
+INSERT INTO RECIPE(uuid, uuid_user, title, prep_time, cook_time, serving, instructions, ingredients, notes, occasion, recipe_type) VALUES
+('a416e14c-b077-4c0a-9934-3f34c3307f8a','4ab9a501-0697-4905-a790-8a604391cbf1', 'Apple Pie', 10, 30, 8, 'Make crust: Place flour and butter into freezer for 30 minutes before starting crust process.', '1/2 Cup. Garlic','I love apple pie and this is by far the best one.', 'BRUNCH', 'VEGETARIAN');
+
+INSERT INTO RECIPE(uuid, uuid_user, title, prep_time, cook_time, serving, instructions, ingredients, notes, occasion, recipe_type) VALUES
+('fca81ff0-e049-4155-8c29-5ad1e6da589b','4ab9a501-0697-4905-a790-8a604391cbf1', 'Apple Pie', 10, 30, 8, 'Make crust: Place flour and butter into freezer for 30 minutes before starting crust process.', '1/2 Cup. Garlic','I love apple pie and this is by far the best one.', 'BRUNCH', 'VEGETARIAN');
+
+
 INSERT INTO RECIPE(uuid_user, title, prep_time, cook_time, serving, instructions, ingredients, notes, occasion, recipe_type) VALUES
 ('4ab9a501-0697-4905-a790-8a604391cbf1', 'Apple Pie', 10, 30, 8, 'Make crust: Place flour and butter into freezer for 30 minutes before starting crust process.', '1/2 Cup. Garlic','I love apple pie and this is by far the best one.', 'BRUNCH', 'VEGETARIAN');
 

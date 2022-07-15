@@ -2,10 +2,14 @@ package com.recipebook.recipe.dto;
 
 import com.recipebook.model.enums.OccasionEnum;
 import com.recipebook.model.enums.RecipeTypeEnum;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Data
 public class RecipeFilterDto {
+
 
     private Integer offset;
     private Integer limit;
