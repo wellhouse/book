@@ -18,3 +18,7 @@ directory.root: ./data/index
 The decision of having just one large text field for keeping the ingredients and the instructions was based on a briefly research on some websites that have the same proposal as this application. Just let the users put the ingredients and amounts separated per lines. It was not interresting keep a huge table of all the ingredients inserted by the users.
 Using Hibernate Search Made the complex queries with many filters easiear to maintain. It also brings to application the fuzzy query, that can search for a word even when its written wrong or with lack of letters.
 Fore more informations about this framework you can consult the official web site [Hibernate Search](https://hibernate.org/search/)
+
+## :triangular_ruler:Architectural patterns
+The MVC architecture was chosen for this project for being known by the majority of developers, making tests easy to do and easy maintenance. Putting a service layer to encapsulate the domain logic is useful for unit tests and in case of some business logic or even repository has to be changed.
+SOLID principles are being used also. As a reusability and single responsibility principle. There are some codes that has to be improved but those are totally separated and easy to find the modification point.
