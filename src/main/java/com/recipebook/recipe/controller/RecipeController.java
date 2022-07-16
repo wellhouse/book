@@ -5,15 +5,10 @@ import com.recipebook.model.enums.RecipeTypeEnum;
 import com.recipebook.recipe.dto.RecipeDto;
 import com.recipebook.recipe.dto.RecipeFilterDto;
 import com.recipebook.recipe.service.RecipeService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Slice;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,11 +25,6 @@ public class RecipeController {
     @Autowired
     private RecipeService recipeService;
 
-    @ApiOperation(value = "Get a product by id", notes = "Returns a product as per the id")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Successfully retrieved"),
-            @ApiResponse(code = 404, message = "Not found - The product was not found")
-    })
     @GetMapping()
     public ResponseEntity<Slice<RecipeDto>> getIngredientsByOccasion(@RequestParam("occasion") OccasionEnum occasion) {
 

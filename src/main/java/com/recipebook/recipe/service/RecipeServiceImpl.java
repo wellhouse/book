@@ -35,6 +35,10 @@ public class RecipeServiceImpl implements RecipeService {
 
     private static final Logger logger = LoggerFactory.getLogger(RecipeServiceImpl.class);
 
+    public RecipeServiceImpl(RecipeRepository repository) {
+        this.recipeRepository = repository;
+    }
+
     @Autowired
     private RecipeRepository recipeRepository;
 
