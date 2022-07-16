@@ -73,7 +73,7 @@ public class RecipeServiceImpl implements RecipeService {
 
     public void delete(UUID uuid) throws ResourceNotFoundException, BusinessException {
 
-        Recipe recipe = recipeRepository.findById(uuid).orElseThrow(() -> new ResourceNotFoundException("Internal error trying to delete resource: " + uuid));
+        Recipe recipe = recipeRepository.findById(uuid).orElseThrow(() -> new ResourceNotFoundException("Resource not found !" + uuid));
 
         recipeRepository.delete(recipe);
     }
