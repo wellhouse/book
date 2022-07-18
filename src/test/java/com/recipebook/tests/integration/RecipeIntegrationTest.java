@@ -113,7 +113,6 @@ public class RecipeIntegrationTest {
                 .andExpect(status().isOk()).andReturn();
 
         List<RecipeDto> listRecipeDto = objectMapper.readValue(mvcResult.getResponse().getContentAsString(), new TypeReference<List<RecipeDto>>(){});
-
     }
 
     @Test
@@ -136,6 +135,5 @@ public class RecipeIntegrationTest {
                         .accept(MediaType.APPLICATION_JSON)
                         .contentType(MediaType.APPLICATION_JSON)
                 ).andExpect(status().isOk()).andReturn();
-
     }
 }

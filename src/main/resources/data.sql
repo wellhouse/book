@@ -21,7 +21,7 @@ Place the pie under the broiler and bake until the meringue starts to brown, 3 t
 ¼ cup cornstarch
 3 egg yolks
 1 teaspoon vanilla extract',
-'Per Serving: 490 calories; protein 8.8g; carbohydrates 65.6g; fat 22.1g; cholesterol 152.9mg; sodium 318.4mg. ',
+'Per Serving: 490 calories; protein 8.8g; carbohydrates 65.6g; fat 22.1g; cholesterol 152.9mg; sodium 318.4mg.',
 'AFTERNOON_COFFEE',
 'VEGETARIAN');
 

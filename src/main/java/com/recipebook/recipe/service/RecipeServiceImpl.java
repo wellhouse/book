@@ -99,42 +99,42 @@ public class RecipeServiceImpl implements RecipeService {
                 .where( f -> f.bool( b -> {
 
                     if (Objects.nonNull(filter.getTitle())) {
-                        b.must(f.match().field("title").matching(filter.getTitle()).fuzzy(1));
+                        b.filter(f.match().field("title").matching(filter.getTitle()).fuzzy(2));
                     }
 
                     if (Objects.nonNull(filter.getInitPrepTime()) && Objects.nonNull(filter.getLimitPrepTime())) {
-                        b.must(f.range().field( "prepTime" )
+                        b.filter(f.range().field( "prepTime" )
                                 .between(filter.getInitPrepTime(), filter.getLimitPrepTime()));
                     }
 
                     if (Objects.nonNull(filter.getInitCookTime()) && Objects.nonNull(filter.getLimitCookTime())) {
-                        b.must(f.range().field( "cookTime" )
+                        b.filter(f.range().field( "cookTime" )
                                 .between(filter.getInitCookTime(), filter.getLimitCookTime()));
                     }
 
                     if (Objects.nonNull(filter.getMinServing()) && Objects.nonNull(filter.getMaxServing())) {
-                        b.must(f.range().field( "serving" )
+                        b.filter(f.range().field( "serving" )
                                 .between(filter.getMinServing(), filter.getMaxServing()));
                     }
 
                     if (Objects.nonNull(filter.getInstructions())) {
-                        b.must(f.match().field("instructions").matching(filter.getInstructions()).fuzzy(1));
+                        b.filter(f.match().field("instructions").matching(filter.getInstructions()).fuzzy(2));
                     }
 
                     if (Objects.nonNull(filter.getWithoutIngredientes())) {
-                        b.mustNot(f.match().field("ingredients").matching(filter.getWithoutIngredientes()).fuzzy(1));
+                        b.mustNot(f.match().field("ingredients").matching(filter.getWithoutIngredientes()).fuzzy(2));
                     }
 
                     if (Objects.nonNull(filter.getWithIngredientes())) {
-                        b.must(f.match().field("ingredients").matching(filter.getWithIngredientes()).fuzzy(1));
+                        b.filter(f.match().field("ingredients").matching(filter.getWithIngredientes()).fuzzy(2));
                     }
 
                     if (Objects.nonNull(filter.getOccasion())) {
-                        b.must(f.match().field("occasion").matching(filter.getOccasion()));
+                        b.filter(f.match().field("occasion").matching(filter.getOccasion()));
                     }
 
                     if (Objects.nonNull(filter.getRecipeType())) {
-                        b.must(f.match().field("recipeType").matching(filter.getRecipeType()));
+                        b.filter(f.match().field("recipeType").matching(filter.getRecipeType()));
                     }
                 }))
                 .fetchHits(filter.getOffset(), filter.getLimit());

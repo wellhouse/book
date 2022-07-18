@@ -65,7 +65,7 @@ public class RecipeController {
                                                         @RequestParam(value = "max-serving", required = false) Integer maxServing,
                                                         @RequestParam(value = "instructions", required = false) String instructions,
                                                         @RequestParam(value = "with-ingredients", required = false) String withIngredients,
-                                                        @RequestParam(value = "without-ingredient", required = false) String withoutIngredients,
+                                                        @RequestParam(value = "without-ingredients", required = false) String withoutIngredients,
                                                         @RequestParam(value = "occasion", required = false) OccasionEnum occasion,
                                                         @RequestParam(value = "recipe-type", required = false) RecipeTypeEnum recipeType,
                                                         @RequestParam(value = "offset", required = true) Integer offset,
