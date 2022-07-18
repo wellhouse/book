@@ -33,3 +33,6 @@ SOLID principles are being used also. As a reusability and single responsibility
 - Spring Boot 2x
 - Maven 3
 - H2 Database
+
+Notes
+ - There's a postman collection in the root of the project **RecipeBook.postman_collection.json**
