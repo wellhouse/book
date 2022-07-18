@@ -1,7 +1,7 @@
-package com.recipebook.user.controller;
+package com.recipebook.recipe.dto.user.controller;
 
-import com.recipebook.user.dto.UserDto;
-import com.recipebook.user.service.UserService;
+import com.recipebook.recipe.dto.user.service.UserService;
+import com.recipebook.recipe.dto.user.dto.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;

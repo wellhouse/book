@@ -26,7 +26,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @ExtendWith(MockitoExtension.class)
 public class RecipeUnitTests {
 
-    public RecipeUnitTests(){
+    public RecipeUnitTests() {
         FixtureFactoryLoader.loadTemplates(ClientTemplateLoader.LOCAL_PACKAGE);
     }
 
@@ -94,6 +94,5 @@ public class RecipeUnitTests {
             recipeService.delete(uuid);
         });
         assertTrue(exception.getMessage().contains("Resource not found !" + uuid));
-
     }
 }

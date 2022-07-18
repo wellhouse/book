@@ -74,8 +74,6 @@ public class RecipeIntegrationTest {
                 .andExpect(jsonPath("$.occasion").value(OccasionEnum.BREAKFAST.toString()))
                 .andExpect(jsonPath("$.recipe-type").value(RecipeTypeEnum.DESSERT.toString()))
                 .andReturn();
-
-        System.out.println("SS");
     }
 
     @Test()

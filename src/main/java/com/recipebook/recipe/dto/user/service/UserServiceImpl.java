@@ -1,8 +1,8 @@
-package com.recipebook.user.service;
+package com.recipebook.recipe.dto.user.service;
 
 import com.recipebook.model.Users;
-import com.recipebook.user.dto.UserDto;
-import com.recipebook.user.repository.UserRepository;
+import com.recipebook.recipe.dto.user.dto.UserDto;
+import com.recipebook.recipe.dto.user.repository.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;

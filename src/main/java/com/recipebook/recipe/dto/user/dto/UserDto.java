@@ -1,4 +1,4 @@
-package com.recipebook.user.dto;
+package com.recipebook.recipe.dto.user.dto;
 
 import lombok.Data;
 
