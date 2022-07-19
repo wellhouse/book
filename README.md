@@ -35,3 +35,4 @@ SOLID principles are being used also. As a reusability and single responsibility
 Notes
  - There's a postman collection in the root of the project **RecipeBook.postman_collection.json**
  - You also can acccess the api documentation on swagger by http://localhost:8082/swagger-ui.html (8080 for dev profile)
+ - Also remember create an user in order to get user_uuid and add new recipes
