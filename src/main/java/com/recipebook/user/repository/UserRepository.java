@@ -1,4 +1,4 @@
-package com.recipebook.recipe.dto.user.repository;
+package com.recipebook.user.repository;
 
 import com.recipebook.model.Users;
 import org.springframework.data.jpa.repository.JpaRepository;

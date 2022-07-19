@@ -1,8 +1,9 @@
-package com.recipebook.recipe.dto.user.service;
+package com.recipebook.user.service;
 
+import com.recipebook.exceptions.business.BusinessException;
 import com.recipebook.model.Users;
-import com.recipebook.recipe.dto.user.dto.UserDto;
-import com.recipebook.recipe.dto.user.repository.UserRepository;
+import com.recipebook.user.dto.UserDto;
+import com.recipebook.user.repository.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -27,5 +28,18 @@ public class UserServiceImpl implements UserService {
             return userDto;
         });
         return dtoSlice;
+    }
+
+    @Override
+    public UserDto addUser(UserDto userDto) throws BusinessException {
+
+        Users u = new Users();
+        modelMapper.map(userDto, u);
+
+        Users saved = userRepository.save(u);
+
+        modelMapper.map(saved, userDto);
+
+        return userDto;
     }
 }

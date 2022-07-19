@@ -29,9 +29,6 @@ public class Users implements Serializable {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "password")
-    private String password;
-
     @Column(name = "created_at")
     private LocalDate created_at;
 

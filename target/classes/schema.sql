@@ -7,7 +7,6 @@ CREATE TABLE USERS (
 	surname VARCHAR(50),
 	gender CHARACTER,
 	email VARCHAR(50),
-	password VARCHAR(100),
 	created_at TIMESTAMP(1),
 	PRIMARY KEY (uuid)
 );

@@ -1,8 +1,7 @@
 
-INSERT INTO USERS (uuid, name, surname, gender, email, password, created_at) VALUES
-('4ab9a501-0697-4905-a790-8a604391cbf1','Wellington', 'Soares Nunes', 'M', 'well.soares.nunes@gmail.com', '123456', CURRENT_TIMESTAMP()),
-('a0e2839f-96c1-4198-bb3d-9211e44bbd50','Natasa', 'Mihajlovic', 'F', 'natasa.m@gmail.com', '123456', CURRENT_TIMESTAMP()),
-('4a2a1116-4264-4100-b5b0-deae6a71cd46','Izabel', 'Vasconcelos Nunes', 'F', 'izabel.n@gmail.com', '123456', CURRENT_TIMESTAMP());
+INSERT INTO USERS (uuid, name, surname, gender, email, created_at) VALUES
+('4ab9a501-0697-4905-a790-8a604391cbf1','Wellington', 'Soares Nunes', 'M', 'well.soares.nunes@gmail.com', CURRENT_TIMESTAMP()),
+('4a2a1116-4264-4100-b5b0-deae6a71cd46','Izabel', 'Vasconcelos Nunes', 'F', 'izabel.n@gmail.com', CURRENT_TIMESTAMP());
 
 INSERT INTO RECIPE(uuid, uuid_user, title, prep_time, cook_time, serving, instructions, ingredients, notes, occasion, recipe_type) VALUES
 ('a416e14c-b077-4c0a-9934-3f34c3307f8a','4ab9a501-0697-4905-a790-8a604391cbf1', 'Flapper Pie', 30, 30, 6,

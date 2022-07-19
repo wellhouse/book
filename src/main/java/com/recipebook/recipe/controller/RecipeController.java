@@ -5,6 +5,9 @@ import com.recipebook.model.enums.RecipeTypeEnum;
 import com.recipebook.recipe.dto.RecipeDto;
 import com.recipebook.recipe.dto.RecipeFilterDto;
 import com.recipebook.recipe.service.RecipeService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +28,11 @@ public class RecipeController {
     @Autowired
     private RecipeService recipeService;
 
+    @ApiOperation(value = "Get all the Recipes on the database by occasion with pagination")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Successfully retrieved"),
+            @ApiResponse(code = 404, message = "Not found - The recipes were not found")
+    })
     @GetMapping()
     public ResponseEntity<Slice<RecipeDto>> getIngredientsByOccasion(@RequestParam("occasion") OccasionEnum occasion) {
 
@@ -33,6 +41,11 @@ public class RecipeController {
         return ResponseEntity.ok().body(recipesDto);
     }
 
+    @ApiOperation(value = "Add new recipes on the data base")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Successfully created"),
+            @ApiResponse(code = 500, message = "Something went wrong")
+    })
     @PostMapping
     public ResponseEntity<RecipeDto> addNewRecipe(@Valid @RequestBody RecipeDto recipeDto) {
 
@@ -41,6 +54,13 @@ public class RecipeController {
         return ResponseEntity.ok(saved);
     }
 
+    @ApiOperation(value = "update recipes on the data base")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Successfully updated"),
+            @ApiResponse(code = 500, message = "Something went wrong"),
+            @ApiResponse(code = 404, message = "Recipe not found to be updated")
+
+    })
     @PutMapping("/{id}")
     public ResponseEntity<RecipeDto> updateRecipe(@PathVariable(required = true) UUID id, @Valid @RequestBody RecipeDto recipeDto) {
         recipeDto.setUuid(id);
@@ -49,13 +69,27 @@ public class RecipeController {
     }
 
     @DeleteMapping("/{id}")
+    @ApiOperation(value = "delete recipes on the data base")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Successfully updated"),
+            @ApiResponse(code = 500, message = "Something went wrong"),
+            @ApiResponse(code = 404, message = "Recipe not found to be deleted")
+
+    })
     public ResponseEntity<UUID> deleteRecipe(@PathVariable(value = "id") UUID id) {
         recipeService.delete(id);
         return ResponseEntity.ok().body(id);
     }
 
 
-        @GetMapping("/filter")
+    @GetMapping("/filter")
+    @ApiOperation(value = "filter recipes on the data base")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Successfully filtered"),
+            @ApiResponse(code = 500, message = "Something went wrong"),
+            @ApiResponse(code = 404, message = "Nothing was found")
+
+    })
     public ResponseEntity<List<RecipeDto>> getByFilter(@RequestParam(value = "title", required = false) String title,
                                                         @RequestParam(value = "init-prep-time", required = false) Integer initPrepTime,
                                                         @RequestParam(value = "limit-prep-time", required = false) Integer limitPrepTime,

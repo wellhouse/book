@@ -30,6 +30,14 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			]
 		},
@@ -69,12 +77,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/api/book/recipe/filter?title=BLT Pasta Salad with Mayo&without-ingredients=avocado&offset=0&limit=20",
+							"raw": "http://localhost:8080/api/book/recipe/filter?title=BLT Pasta Salad with Mayo&without-ingredients=avocado&offset=0&limit=20",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8082",
+							"port": "8080",
 							"path": [
 								"api",
 								"book",
@@ -160,7 +168,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "    {\r\n        \"uuid-user\":\"4ab9a501-0697-4905-a790-8a604391cbf1\",\r\n        \"title\": \"aaaaaa\",\r\n        \"serving\": \"8\",\r\n        \"instructions\": \"Make crust: Place flour and butter into freezer for 30 minutes before starting crust process.\",\r\n        \"ingredients\": \"1/2 Cup. Cinnamon\\n 1/2 Cup. Orange Zests\",\r\n        \"notes\": \"I love apple pie and this is by far the best one.\",\r\n        \"occasion\": \"BRUNCH\",\r\n        \"prep-time\": 10,\r\n        \"cook-time\": 30,\r\n        \"recipe-type\": \"VEGETARIAN\"\r\n    }",
+							"raw": "    {\r\n        \"uuid-user\":\"f66176b9-e905-4ead-98d7-b3f798d636ae\",\r\n        \"title\": \"aaaaaa\",\r\n        \"serving\": \"8\",\r\n        \"instructions\": \"Make crust: Place flour and butter into freezer for 30 minutes before starting crust process.\",\r\n        \"ingredients\": \"1/2 Cup. Cinnamon\\n 1/2 Cup. Orange Zests\",\r\n        \"notes\": \"I love apple pie and this is by far the best one.\",\r\n        \"occasion\": \"BRUNCH\",\r\n        \"prep-time\": 10,\r\n        \"cook-time\": 30,\r\n        \"recipe-type\": \"VEGETARIAN\"\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -168,12 +176,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8082/api/book/recipe/",
+							"raw": "http://localhost:8080/api/book/recipe/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8082",
+							"port": "8080",
 							"path": [
 								"api",
 								"book",
