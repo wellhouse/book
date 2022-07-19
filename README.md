@@ -22,8 +22,6 @@ Fore more informations about this framework you can consult the official web sit
 ## **Database Design**
 <img src="https://user-images.githubusercontent.com/7095754/179591592-dcf3fedc-edd1-4e1a-bae3-cd77fde857f1.jpeg" width="300" height="300">
 
-
-
 ## :triangular_ruler:Architectural patterns
 The MVC architecture was chosen for this project for being known by the majority of developers, making tests easy to do and easy maintenance. Putting a service layer to encapsulate the domain logic is useful for unit tests and in case of some business logic or even repository has to be changed.
 SOLID principles are being used also. As a reusability and single responsibility principle. There are some codes that has to be improved but those are totally separated and easy to find the modification point.
@@ -36,3 +34,4 @@ SOLID principles are being used also. As a reusability and single responsibility
 
 Notes
  - There's a postman collection in the root of the project **RecipeBook.postman_collection.json**
+ - You also can acccess the api documentation on swagger by http://localhost:8082/swagger-ui.html (8080 for dev profile)
