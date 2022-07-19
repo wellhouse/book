@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "da321604-104b-4b81-b491-cd105a1b251f",
+		"name": "RecipeBook",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6066671"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/book/user/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"book",
+								"user",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "recipe",
+			"item": [
+				{
+					"name": "ocassion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/book/recipe?occasion=BRUNCH",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"book",
+								"recipe"
+							],
+							"query": [
+								{
+									"key": "occasion",
+									"value": "BRUNCH"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/book/recipe/filter?title=BLT Pasta Salad with Mayo&without-ingredients=avocado&offset=0&limit=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"book",
+								"recipe",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "BLT Pasta Salad with Mayo"
+								},
+								{
+									"key": "init-prep-time",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "limit-prep-time",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "init-cook-time",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "limit-cook-time",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "min-serving",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "max-serving",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "instructions",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "with-ingredients",
+									"value": "white sugar",
+									"disabled": true
+								},
+								{
+									"key": "without-ingredients",
+									"value": "avocado"
+								},
+								{
+									"key": "occasion",
+									"value": "BRUNCH",
+									"disabled": true
+								},
+								{
+									"key": "recipe-type",
+									"value": "SALAD",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"uuid-user\":\"4ab9a501-0697-4905-a790-8a604391cbf1\",\r\n        \"title\": \"aaaaaa\",\r\n        \"serving\": \"8\",\r\n        \"instructions\": \"Make crust: Place flour and butter into freezer for 30 minutes before starting crust process.\",\r\n        \"ingredients\": \"1/2 Cup. Cinnamon\\n 1/2 Cup. Orange Zests\",\r\n        \"notes\": \"I love apple pie and this is by far the best one.\",\r\n        \"occasion\": \"BRUNCH\",\r\n        \"prep-time\": 10,\r\n        \"cook-time\": 30,\r\n        \"recipe-type\": \"VEGETARIAN\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/book/recipe/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"book",
+								"recipe",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"uuid-user\":\"4ab9a501-0697-4905-a790-8a604391cbf1\",\r\n        \"title\": \"Apple Pie tastefull\",\r\n        \"serving\": \"8\",\r\n        \"instructions\": \"Make crust: Place flour and butter into freezer for 30 minutes before starting crust process.\",\r\n        \"ingredients\": \"1/2 Cup. Cinnamon\\n 1/2 Cup. Orange Zests\",\r\n        \"notes\": \"This is the worst recipe from all the time\",\r\n        \"occasion\": \"BRUNCH\",\r\n        \"prep-time\": 10,\r\n        \"cook-time\": 30,\r\n        \"recipe-type\": \"VEGETARIAN\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/book/recipe/c353b427-d780-469f-9b9a-89a24341ff34",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"book",
+								"recipe",
+								"c353b427-d780-469f-9b9a-89a24341ff34"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/book/recipe/a416e14c-b077-4c0a-9934-3f34c3307f8a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"book",
+								"recipe",
+								"a416e14c-b077-4c0a-9934-3f34c3307f8a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
